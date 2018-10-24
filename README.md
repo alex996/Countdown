@@ -1,18 +1,23 @@
 # Countdown
 
-The complete React countdown app from [React JS Tutorial series](https://www.youtube.com/watch?v=xHQsBWtFy6c&list=PLcCp4mjO-z9_mirThFLgn6AVSp4JEazxw) on YouTube.
+React countdown app from [React JS Tutorial series](https://www.youtube.com/watch?v=xHQsBWtFy6c&list=PLcCp4mjO-z9_mirThFLgn6AVSp4JEazxw) on YouTube.
 
 ## Installation
 
-```
+```sh
+# Clone the repo
 git clone https://github.com/alex996/Countdown.git /path/to/countdown
 
+# CD into it
 cd /path/to/countdown
 
-npm i
+# Install deps
+yarn
 ```
 
-### Caveats
+## Caveats
+
+> **Update**: I "forked" `moment-holiday` to this project under `vendors/moment-holiday-us.min` and got it to work by changing `require` statements, as mentioned in #16. There was one `require` with dynamic args that I had to remove altogether. Also, ESLint had to be disabled file-wide, otherwise Webpack wouldn't bundle it in dev.
 
 [moment-holiday](https://github.com/kodie/moment-holiday) lib doesn't seem to play very nicely with the default webpack config in [create-react-app](https://github.com/facebook/create-react-app). That means you'll have to either tweak it yourself, or do a quick'n'dirty hack I describe in [this video](https://www.youtube.com/watch?v=ZO8ii8IkXa8). It's worth to note that I *was* able to get it working on CodeSandbox though.
 
